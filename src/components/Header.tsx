@@ -26,6 +26,25 @@ export default function Header() {
         { name: 'Contacto', href: '#contact' },
     ];
 
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        e.preventDefault();
+        setIsOpen(false);
+
+        const targetId = href.replace('#', '');
+        const element = document.getElementById(targetId);
+
+        if (element) {
+            const headerOffset = 85;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
+
     return (
         <header
             className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'py-2 shadow-lg bg-gradient-to-r from-[#1b304b]/95 via-[#1F3B5B]/95 to-[#1F3B5B]/95 backdrop-blur-md' : 'py-4 bg-gradient-to-r from-[#1b304b] via-[#1F3B5B] to-[#1F3B5B]'
@@ -47,6 +66,7 @@ export default function Header() {
                         <a
                             key={link.name}
                             href={link.href}
+                            onClick={(e) => handleNavClick(e, link.href)}
                             className="text-gray-200 hover:text-[#C9A646] font-medium transition-colors text-sm uppercase tracking-wider"
                         >
                             {link.name}
@@ -85,7 +105,7 @@ export default function Header() {
                                     key={link.name}
                                     href={link.href}
                                     className="text-lg text-white font-medium hover:text-[#C9A646]"
-                                    onClick={() => setIsOpen(false)}
+                                    onClick={(e) => handleNavClick(e, link.href)}
                                 >
                                     {link.name}
                                 </a>
