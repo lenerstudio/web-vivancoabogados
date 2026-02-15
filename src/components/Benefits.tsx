@@ -28,16 +28,22 @@ export default function Benefits() {
     return (
         <section id="benefits" className="py-24 bg-primary text-white relative">
             <div className="container mx-auto px-4 z-10 relative">
-                <div className="text-center max-w-3xl mx-auto mb-16">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="text-center max-w-3xl mx-auto mb-16"
+                >
                     <div className="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wide uppercase bg-accent text-primary rounded-full">
                         Propuesta de Valor
                     </div>
                     <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">
                         ¿Por qué elegir Viancoyasociados?
                     </h2>
-                </div>
+                </motion.div>
 
-                <div className="grid grid-cols-1 center md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {benefits.map((benefit, index) => (
                         <motion.div
                             key={index}

@@ -78,14 +78,20 @@ export default function Services() {
     return (
         <section id="services" className="py-24 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 z-10 relative">
-                <div className="max-w-3xl mx-auto text-center mb-16">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="max-w-3xl mx-auto text-center mb-16"
+                >
                     <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">
                         ¿Qué trámites de extranjería gestionamos por ti?
                     </h2>
                     <p className="text-lg text-slate-600">
                         Gestionamos tu trámite de extranjería de principio a fin, para que ganes tranquilidad, evites errores y tengas más opciones de éxito en tu proceso migratorio.
                     </p>
-                </div>
+                </motion.div>
 
                 <motion.div
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"

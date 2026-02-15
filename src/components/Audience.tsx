@@ -24,11 +24,11 @@ export default function Audience() {
                     {painPoints.map((point, idx) => (
                         <motion.div
                             key={idx}
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            whileInView={{ scale: 1, opacity: 1 }}
-                            transition={{ delay: idx * 0.1, duration: 0.4 }}
+                            initial={{ y: 30, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            transition={{ delay: idx * 0.1, duration: 0.5 }}
                             viewport={{ once: true }}
-                            className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-red-400 flex flex-col items-center hover:shadow-md transition-shadow"
+                            className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-red-400 flex flex-col items-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                         >
                             <div className="w-12 h-12 bg-red-50 text-red-500 rounded-full flex items-center justify-center mb-4">
                                 <point.icon size={24} />

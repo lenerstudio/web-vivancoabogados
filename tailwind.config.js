@@ -22,6 +22,21 @@ export default {
                 center: true,
                 padding: '1rem',
             },
+            keyframes: {
+                'text-shimmer': {
+                    '0%, 100%': {
+                        'background-size': '200% 200%',
+                        'background-position': 'left center'
+                    },
+                    '50%': {
+                        'background-size': '200% 200%',
+                        'background-position': 'right center'
+                    }
+                },
+            },
+            animation: {
+                'text-shimmer': 'text-shimmer 2.5s ease-in-out infinite alternate',
+            },
         },
     },
     plugins: [],

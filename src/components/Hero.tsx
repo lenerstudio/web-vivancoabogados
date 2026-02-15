@@ -5,9 +5,23 @@ export default function Hero() {
     return (
         <section
             id="hero"
-            className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-[url('/img/image-18.jpg')] bg-cover bg-center"
+            className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-primary"
         >
-            <div className="absolute inset-0 bg-[#1F3B5B]/80 z-0"></div>
+            {/* Animated Background */}
+            <motion.div
+                className="absolute inset-0 z-0 bg-cover bg-center"
+                initial={{ scale: 1 }}
+                animate={{ scale: 1.1 }}
+                transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "linear"
+                }}
+                style={{ backgroundImage: "url('/img/image-18.jpg')" }}
+            />
+
+            <div className="absolute inset-0 bg-[#1F3B5B]/80 z-[1] pointer-events-none"></div>
 
             <div className="relative z-10 w-full max-w-5xl mx-auto px-4 text-center text-white">
                 <motion.div
@@ -19,9 +33,11 @@ export default function Hero() {
                         Expertos en Extranjería
                     </div>
 
-                    <h1 className="text-4xl md:text-6xl font-serif font-bold leading-tight mb-6">
+
+                    <h1 className="text-4xl md:text-6xl font-serif font-bold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-accent-300 to-white animate-text-shimmer bg-[length:200%_auto]">
                         Líderes en extranjería e inmigración <br className="hidden md:block" /> en Sevilla y en toda España
                     </h1>
+
 
                     <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-200 mb-8 font-light leading-relaxed">
                         20 años ayudando a personas y familias migrantes a regularizar su situación con soluciones legales eficaces, personalizadas y humanas.
@@ -54,6 +70,6 @@ export default function Hero() {
             <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/50">
                 <ArrowRight className="transform rotate-90" size={32} />
             </div>
-        </section>
+        </section >
     );
 }
