@@ -10,7 +10,7 @@ export default function About() {
     ];
 
     return (
-        <section id="about" className="py-20 bg-neutral">
+        <section id="about" className="py-20 bg-neutral scroll-mt-28">
             <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
 
                 {/* Left: Text Content */}

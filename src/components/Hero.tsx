@@ -5,7 +5,7 @@ export default function Hero() {
     return (
         <section
             id="hero"
-            className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-primary"
+            className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-primary scroll-mt-28"
         >
             {/* Animated Background */}
             <motion.div

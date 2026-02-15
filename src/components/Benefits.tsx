@@ -26,7 +26,7 @@ export default function Benefits() {
     ];
 
     return (
-        <section id="benefits" className="py-24 bg-primary text-white relative">
+        <section id="benefits" className="py-24 bg-primary text-white relative scroll-mt-28">
             <div className="container mx-auto px-4 z-10 relative">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
