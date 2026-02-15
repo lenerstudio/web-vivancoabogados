@@ -107,7 +107,7 @@ export default function Services() {
                             className={`p-6 rounded-xl border transition-all duration-300 group hover:shadow-xl hover:-translate-y-2
                 ${service.highlight
                                     ? 'bg-primary text-white border-primary col-span-1 md:col-span-2 lg:col-span-1 xl:col-span-2 flex flex-col items-center justify-center text-center'
-                                    : 'bg-white border-slate-100 hover:border-accent/50'
+                                    : 'bg-white border-slate-100 hover:border-accent/50 flex flex-col items-center text-center'
                                 }`}
                         >
                             <div className={`p-4 rounded-full mb-4 inline-block transition-transform duration-500 group-hover:rotate-12
